@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Laravel Backend Service
+  backend:
+    build:
+      context: ./laravel-example-crud
+    container_name: laravel_backend
+    ports:
+      - "8000:80"
+    volumes:
+      - ./laravel-example-crud:/var/www/html
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:your-app-key-here
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=laravel
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+    depends_on:
+      - db
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./example-react-laravel
+    container_name: react_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./example-react-laravel:/app
+    stdin_open: true
+    tty: true
+
+  # MySQL Database Service
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=laravel
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
