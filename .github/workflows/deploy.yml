@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install dependencies
-      run: npm install  # Thay đổi lệnh nếu bạn sử dụng ngôn ngữ khác
+    - name: Start docker
+      run: docker-compose up -d
 
