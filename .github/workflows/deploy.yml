@@ -1,0 +1,15 @@
+name: Deploy to Azure App Service
+
+on:
+  push:
+    branches:
+      - master  # Thay đổi nếu bạn sử dụng branch khác
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      run: npm install  # Thay đổi lệnh nếu bạn sử dụng ngôn ngữ khác
+
