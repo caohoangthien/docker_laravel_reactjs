@@ -47,4 +47,4 @@ jobs:
         run: docker-compose --version
 
       - name: Run docker-compose
-        run: docker-compose up -d
+        run: docker-compose up
