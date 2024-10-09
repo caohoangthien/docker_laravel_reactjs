@@ -31,6 +31,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: thien
+        app-name: laravel
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
         images: thien.azurecr.io/laravel:latest
