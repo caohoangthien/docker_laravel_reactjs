@@ -31,7 +31,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache
 
-COPY ./vhost.conf /etc/apache2/site-available/000-default.conf
+COPY ../vhost.conf /etc/apache2/site-available/000-default.conf
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
