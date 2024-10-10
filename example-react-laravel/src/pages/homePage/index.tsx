@@ -266,7 +266,7 @@ const HomePage = () => {
   return (
     <>
       <Box>
-        <h1 className={classes.title}>Task Management</h1>
+        <h1 className={classes.title}>Tasks Management</h1>
         <Box>
           <Button
             variant="contained"
