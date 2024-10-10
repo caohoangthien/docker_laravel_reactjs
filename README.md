@@ -1,5 +1,5 @@
 # Docker Compose - React, Laravel, MySQL, PhpMyAdmin
-Just a basic boilerplate to start directly coding on React, Laravel, MySQL and PhpMyAdmin with Docker Compose.
+Just a basic boilerplate to start directly coding on React, Laravel, MySQL and PhpMyAdmin with Docker Compos.
 
 ## Frontend
 - NodeJS 13.10.1 Alpine
